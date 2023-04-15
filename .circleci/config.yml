@@ -186,7 +186,7 @@ jobs:
 
   configure-infrastructure:
     docker:
-      - image: essamatef911/aws-node
+      - image: mareimorsy/aws-node
     steps:
       - checkout
       - add_ssh_keys:
