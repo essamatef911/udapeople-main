@@ -1,4 +1,9 @@
 ---
+- name: "upgrade packages."
+  become: true
+  abt:
+    upgrade: "yes"
+    
 - name: "install dependencies."
   become: true
   apt:
