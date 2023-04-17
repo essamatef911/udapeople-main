@@ -1,11 +1,12 @@
 ---
- - name: "upgrade packages."
-   become: true
-   apt:
-     upgrade: "yes"
+# - name: "upgrade packages."
+#   become: true
+#   apt:
+#     upgrade: "yes"
 
 - name: "install dependencies."
   become: true
+  # no_output_timeout: 30m
   apt:
     name: ["nodejs", "npm"]
     state: latest
@@ -66,4 +67,3 @@
   shell:
     cmd: "docker-compose -f docker-compose.yml up -d"
     chdir: .
-    
