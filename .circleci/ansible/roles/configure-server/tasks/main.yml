@@ -5,14 +5,14 @@
 #     upgrade: "yes"
 
 - name: "install dependencies."
-  become: true
+  become: 50.16.86.213
   apt:
     name: ["nodejs", "npm"]
     state: latest
     update_cache: yes
 
 - name: "install pm2"
-  become: true
+  become: 50.16.86.213
   npm:
     name: pm2
     global: yes
@@ -22,7 +22,7 @@
 
 
 - name: "install docker."
-  become: true
+  become: 50.16.86.213
   apt:
     name: ["docker.io"]
     state: latest
@@ -41,7 +41,7 @@
 #   become: true
 
 - name: sudo usermod -aG docker root
-  become: True
+  become: 50.16.86.213
   shell:
     cmd: "usermod -aG docker ubuntu"
     chdir: .
@@ -62,7 +62,7 @@
     dest: /home/ubuntu/
 
 - name: Run PostgresQL DB
-  become: True
+  become: 50.16.86.213
   shell:
     cmd: "docker-compose -f docker-compose.yml up -d"
     chdir: .
